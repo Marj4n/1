@@ -18,6 +18,13 @@ namespace FoodXYZ.views
             InitializeComponent();
         }
 
+        private string tipeUser = "";
+        private string nama = "";
+        private string telepon = "";
+        private string alamat = "";
+        private string username = "";
+        private string password = "";
+
         private void KelolaUserForm_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = DbManager.ExecuteDataQuery("SELECT * FROM user");
@@ -27,12 +34,12 @@ namespace FoodXYZ.views
 
         private void materialButtonTambah_Click(object sender, EventArgs e)
         {
-            string tipeUser = materialComboBoxTipeUser.Text;
-            string nama = materialMaskedTextBoxNama.Text;
-            string telepon = materialMaskedTextBoxTelepon.Text;
-            string alamat = materialMaskedTextBoxAlamat.Text;
-            string username = materialMaskedTextBoxUsername.Text;
-            string password = materialMaskedTextBoxPassword.Text;
+            tipeUser = materialComboBoxTipeUser.Text;
+            nama = materialMaskedTextBoxNama.Text;
+            telepon = materialMaskedTextBoxTelepon.Text;
+            alamat = materialMaskedTextBoxAlamat.Text;
+            username = materialMaskedTextBoxUsername.Text;
+            password = materialMaskedTextBoxPassword.Text;
             if (tipeUser == "" || nama == "" || telepon == "" || alamat == "" || username == "" || password == "")
             {
                 MessageBox.Show("Mohon isi semua data");
@@ -43,19 +50,39 @@ namespace FoodXYZ.views
                 DbManager.ExecuteQuery(query);
                 dataGridView1.DataSource = DbManager.ExecuteDataQuery("SELECT * FROM user");
                 MessageBox.Show("Data berhasil ditambahkan");
+                materialComboBoxTipeUser.Text = "";
+                materialMaskedTextBoxNama.Text = "";
+                materialMaskedTextBoxTelepon.Text = "";
+                materialMaskedTextBoxAlamat.Text = "";
+                materialMaskedTextBoxUsername.Text = "";
+                materialMaskedTextBoxPassword.Text = "";
             }
         }
 
         private void materialButtonEdit_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE user SET tipe_user = '" + materialComboBoxTipeUser.Text + "', nama = '" + materialMaskedTextBoxNama.Text + "', telepon = '" + materialMaskedTextBoxTelepon.Text + "', alamat = '" + materialMaskedTextBoxAlamat.Text + "', username = '" + materialMaskedTextBoxUsername.Text + "', password = '" + materialMaskedTextBoxPassword.Text + "' WHERE id = '" + dataGridView1.CurrentRow.Cells[0].Value.ToString() + "'";
-            DbManager.ExecuteQuery(query);
-            dataGridView1.DataSource = DbManager.ExecuteDataQuery("SELECT * FROM user");
-            MessageBox.Show("Data berhasil diubah");
+            tipeUser = materialComboBoxTipeUser.Text;
+            nama = materialMaskedTextBoxNama.Text;
+            telepon = materialMaskedTextBoxTelepon.Text;
+            alamat = materialMaskedTextBoxAlamat.Text;
+            username = materialMaskedTextBoxUsername.Text;
+            password = materialMaskedTextBoxPassword.Text;
+            if (tipeUser == "" || nama == "" || telepon == "" || alamat == "" || username == "" || password == "")
+            {
+                MessageBox.Show("Mohon isi semua data");
+            }
+            else
+            {
+                string query = "UPDATE user SET tipe_user = '" + materialComboBoxTipeUser.Text + "', nama = '" + materialMaskedTextBoxNama.Text + "', telepon = '" + materialMaskedTextBoxTelepon.Text + "', alamat = '" + materialMaskedTextBoxAlamat.Text + "', username = '" + materialMaskedTextBoxUsername.Text + "', password = '" + materialMaskedTextBoxPassword.Text + "' WHERE id = '" + dataGridView1.CurrentRow.Cells[0].Value.ToString() + "'";
+                DbManager.ExecuteQuery(query);
+                dataGridView1.DataSource = DbManager.ExecuteDataQuery("SELECT * FROM user");
+                MessageBox.Show("Data berhasil diubah");
+            }
         }
 
         private void materialButtonDelete_Click(object sender, EventArgs e)
         {
+
             string query = "DELETE FROM user WHERE id = '" + dataGridView1.CurrentRow.Cells[0].Value.ToString() + "'";
             DbManager.ExecuteQuery(query);
             dataGridView1.DataSource = DbManager.ExecuteDataQuery("SELECT * FROM user");

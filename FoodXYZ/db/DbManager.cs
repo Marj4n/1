@@ -41,7 +41,7 @@ namespace FoodXYZ.db
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dt);
-                return dt;
+                return dt.Rows.Count > 0 ? dt : null;
             }
         }
     }

@@ -41,10 +41,5 @@ C:\project\desktop\FoodXYZ\FoodXYZ\obj\Debug\FoodXYZ.views.TransaksiForm.resourc
 C:\project\desktop\FoodXYZ\FoodXYZ\obj\Debug\FoodXYZ.views.KelolaPenjualanForm.resources
 C:\project\desktop\FoodXYZ\FoodXYZ\obj\Debug\FoodXYZ.views.KelolaUserForm.resources
 C:\project\desktop\FoodXYZ\FoodXYZ\bin\Debug\itextsharp.dll
-C:\project\desktop\FoodXYZ\FoodXYZ\bin\Debug\PdfSharp.Charting.dll
-C:\project\desktop\FoodXYZ\FoodXYZ\bin\Debug\PdfSharp.dll
 C:\project\desktop\FoodXYZ\FoodXYZ\bin\Debug\itextsharp.xml
-C:\project\desktop\FoodXYZ\FoodXYZ\bin\Debug\PdfSharp.xml
-C:\project\desktop\FoodXYZ\FoodXYZ\bin\Debug\PdfSharp.Charting.xml
-C:\project\desktop\FoodXYZ\FoodXYZ\bin\Debug\de\PdfSharp.resources.dll
-C:\project\desktop\FoodXYZ\FoodXYZ\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\project\desktop\FoodXYZ\FoodXYZ\obj\Debug\FoodXYZ.exe.config

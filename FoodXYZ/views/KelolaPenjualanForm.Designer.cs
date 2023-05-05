@@ -141,7 +141,6 @@
             this.chart1.Size = new System.Drawing.Size(763, 216);
             this.chart1.TabIndex = 41;
             this.chart1.Text = "chart1";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // materialButtonGenerate
             // 

@@ -27,7 +27,7 @@ namespace FoodXYZ.views
                                                              MaterialSkin.TextShade.WHITE);
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void login()
         {
             string username = usernameMaskedTextBox.Text;
             string password = passwordMaskedTextBox.Text;
@@ -74,6 +74,11 @@ namespace FoodXYZ.views
                     }
                 }
             }
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+           login();
         }
 
         private void resetButton_Click(object sender, EventArgs e)
