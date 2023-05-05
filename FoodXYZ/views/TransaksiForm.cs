@@ -8,6 +8,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using MySqlX.XDevAPI.Relational;
 
 namespace FoodXYZ.views
 {
@@ -98,7 +99,6 @@ namespace FoodXYZ.views
                 DbManager.ExecuteQuery($"UPDATE barang SET jumlah_barang = {newQuantity} WHERE id = {barangId}");
 
                 // Clear input fields
-                materialComboBoxPilihMenu.SelectedIndex = -1;
                 materialMaskedTextBoxQuantitas.Clear();
                 materialMaskedTextBoxTotal.Text = "Rp. 0";
 
@@ -138,7 +138,6 @@ namespace FoodXYZ.views
             decimal kembalian = uangMasuk - totalHarga;
             Kembaliann.Text = $"{kembalian}";
             // Clear transaction data
-            dataGridView1.Rows.Clear();
             TotalHarga.Text = "0";
             materialMaskedTextBoxMasukkanUang.Clear();
         }
@@ -186,22 +185,42 @@ namespace FoodXYZ.views
 
         private void materialButtonSimpan_Click(object sender, EventArgs e)
         {
-            // Check if there are any transactions to be saved
+            // Check if there is any transaction to save
             if (dataGridView1.Rows.Count == 0)
             {
-                MessageBox.Show("Tidak ada transaksi untuk disimpan", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Tidak ada transaksi yang dapat disimpan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            // Reset the DataGridView and input fields
+
+            // Get current date and time
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            // Loop through all rows in the DataGridView and insert them into the database
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                string transaksiId = GenerateTransaksiId();
+                decimal totalBayar = Convert.ToDecimal(row.Cells[5].Value);
+                string userId = "1"; // TODO: Ganti dengan ID user yang sesuai
+                string productName = materialComboBoxPilihMenu.Text;
+                string selectQuery = $"SELECT id FROM barang WHERE nama_barang = '{productName}'";
+                DataTable dataTable = DbManager.ExecuteDataQuery(selectQuery);
+                string barangId = dataTable != null ? dataTable.Rows[0]["id"].ToString() : "";
+
+                // Insert transaction data into the database
+                if(totalBayar > 0)
+                {
+                string insertQuery = $"INSERT INTO transaksi (no_transaksi, tgl_transaksi, total_bayar, id_user, id_barang) VALUES ('{transaksiId}', '{currentDate}', {totalBayar}, {userId}, {barangId})";
+                DbManager.ExecuteQuery(insertQuery);
+                }
+                // clear that row
+            }
+
+            // Clear transaction data
             dataGridView1.Rows.Clear();
-            materialComboBoxPilihMenu.SelectedIndex = -1;
-            materialMaskedTextBoxQuantitas.Clear();
-            materialMaskedTextBoxTotal.Text = "Rp. 0";
-            TotalHarga.Text = "Rp. 0";
+            TotalHarga.Text = "0";
             Kembaliann.Text = "0";
 
-            MessageBox.Show("Data transaksi berhasil disimpan", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            MessageBox.Show("Transaksi berhasil disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void materialComboBoxPilihMenu_TextChanged(object sender, EventArgs e)

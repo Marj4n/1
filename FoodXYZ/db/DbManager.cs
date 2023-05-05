@@ -44,5 +44,15 @@ namespace FoodXYZ.db
                 return dt.Rows.Count > 0 ? dt : null;
             }
         }
+
+        public static void ExecuteNonQuery(string query)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }
