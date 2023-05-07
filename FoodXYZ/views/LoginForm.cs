@@ -15,6 +15,7 @@ namespace FoodXYZ.views
     public partial class LoginForm : MaterialForm
     {
         readonly MaterialSkin.MaterialSkinManager materialSkinManager;
+        private string currentUserInsideForm;
         public LoginForm()
         {
             InitializeComponent();
@@ -50,21 +51,31 @@ namespace FoodXYZ.views
                     string userRole = DbManager.ExecuteQuery($"SELECT tipe_user FROM user WHERE username = '{username}' AND password = '{password}'");
 
                     string log = $"INSERT INTO log (waktu, aktivitas, id_user) VALUES (NOW(), 'login', (SELECT id FROM user WHERE username = '{username}'))";
+                    string delete = $"DELETE FROM user_season";
+                    string currentUser;
                     DbManager.ExecuteQuery(log);
                     switch (userRole)
                     {
                         case "admin":
+                            DbManager.ExecuteQuery(delete);
                             AdminForm adminForm = new AdminForm(username);
+                            currentUserInsideForm = $"INSERT INTO user_season (username, form) VALUES ('{username}', 'admin')";
+                            DbManager.ExecuteQuery(currentUserInsideForm);
                             adminForm.Show();
                             this.Hide();
                             break;
                         case "kasir":
+                            DbManager.ExecuteQuery(delete);
                             TransaksiForm kasirForm = new TransaksiForm(username);
+                            currentUserInsideForm = $"INSERT INTO user_season (username, form) VALUES ('{username}', 'kasir')";
+                            DbManager.ExecuteQuery(currentUserInsideForm);
                             kasirForm.Show();
                             this.Hide();
                             break;
                         case "gudang":
+                            DbManager.ExecuteQuery(delete);
                             BarangForm gudangForm = new BarangForm(username);
+                            currentUserInsideForm = $"INSERT INTO user_season (username, form) VALUES ('{username}', 'gudang')";
                             gudangForm.Show();
                             this.Hide();
                             break;
@@ -78,7 +89,7 @@ namespace FoodXYZ.views
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-           login();
+            login();
         }
 
         private void resetButton_Click(object sender, EventArgs e)

@@ -45,6 +45,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.materialButtonTambah = new MaterialSkin.Controls.MaterialButton();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.kasirUsername = new MaterialSkin.Controls.MaterialButton();
+            this.Kembaliann = new MaterialSkin.Controls.MaterialLabel();
+            this.TotalHarga = new System.Windows.Forms.Label();
             this.labelMaxQuantitas = new System.Windows.Forms.Label();
             this.materialButtonSimpan = new MaterialSkin.Controls.MaterialButton();
             this.materialButtonPrint = new MaterialSkin.Controls.MaterialButton();
@@ -54,13 +57,10 @@
             this.materialMaskedTextBoxMasukkanUang = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.labelTotalHarga = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.kasirUsername = new MaterialSkin.Controls.MaterialLabel();
             this.materialMaskedTextBoxTotal = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialButtonLogout = new MaterialSkin.Controls.MaterialButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TotalHarga = new System.Windows.Forms.Label();
-            this.Kembaliann = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -85,7 +85,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label11.Location = new System.Drawing.Point(81, 306);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 25);
+            this.label11.Size = new System.Drawing.Size(84, 20);
             this.label11.TabIndex = 32;
             this.label11.Text = "Keranjang";
             // 
@@ -141,7 +141,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label8.Location = new System.Drawing.Point(584, 164);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 25);
+            this.label8.Size = new System.Drawing.Size(97, 20);
             this.label8.TabIndex = 13;
             this.label8.Text = "Total Harga";
             // 
@@ -195,7 +195,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.Location = new System.Drawing.Point(69, 164);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 25);
+            this.label7.Size = new System.Drawing.Size(112, 20);
             this.label7.TabIndex = 11;
             this.label7.Text = "Harga Satuan";
             // 
@@ -250,7 +250,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.Location = new System.Drawing.Point(577, 54);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 25);
+            this.label6.Size = new System.Drawing.Size(81, 20);
             this.label6.TabIndex = 9;
             this.label6.Text = "Quantitas";
             // 
@@ -261,7 +261,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(69, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 25);
+            this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Pilih Menu";
             // 
@@ -272,7 +272,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(42, 371);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 32);
+            this.label5.Size = new System.Drawing.Size(127, 29);
             this.label5.TabIndex = 10;
             this.label5.Text = "Transaksi";
             // 
@@ -283,7 +283,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(67, 339);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 32);
+            this.label4.Size = new System.Drawing.Size(88, 29);
             this.label4.TabIndex = 8;
             this.label4.Text = "Kelola";
             // 
@@ -294,7 +294,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(55, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 40);
+            this.label3.Size = new System.Drawing.Size(88, 36);
             this.label3.TabIndex = 8;
             this.label3.Text = "Kasir";
             // 
@@ -305,7 +305,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(67, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 32);
+            this.label2.Size = new System.Drawing.Size(195, 29);
             this.label2.TabIndex = 7;
             this.label2.Text = "Form Transaksi";
             // 
@@ -335,6 +335,7 @@
             this.panelChildForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelChildForm.Controls.Add(this.kasirUsername);
             this.panelChildForm.Controls.Add(this.Kembaliann);
             this.panelChildForm.Controls.Add(this.TotalHarga);
             this.panelChildForm.Controls.Add(this.labelMaxQuantitas);
@@ -346,7 +347,6 @@
             this.panelChildForm.Controls.Add(this.materialMaskedTextBoxMasukkanUang);
             this.panelChildForm.Controls.Add(this.labelTotalHarga);
             this.panelChildForm.Controls.Add(this.label9);
-            this.panelChildForm.Controls.Add(this.kasirUsername);
             this.panelChildForm.Controls.Add(this.dataGridView1);
             this.panelChildForm.Controls.Add(this.label11);
             this.panelChildForm.Controls.Add(this.materialButtonReset);
@@ -365,6 +365,50 @@
             this.panelChildForm.Size = new System.Drawing.Size(975, 647);
             this.panelChildForm.TabIndex = 9;
             // 
+            // kasirUsername
+            // 
+            this.kasirUsername.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.kasirUsername.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.kasirUsername.Depth = 0;
+            this.kasirUsername.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.kasirUsername.HighEmphasis = true;
+            this.kasirUsername.Icon = null;
+            this.kasirUsername.Location = new System.Drawing.Point(805, -1);
+            this.kasirUsername.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.kasirUsername.MouseState = MaterialSkin.MouseState.HOVER;
+            this.kasirUsername.Name = "kasirUsername";
+            this.kasirUsername.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.kasirUsername.Size = new System.Drawing.Size(99, 36);
+            this.kasirUsername.TabIndex = 47;
+            this.kasirUsername.Text = "Username";
+            this.kasirUsername.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.kasirUsername.UseAccentColor = false;
+            this.kasirUsername.UseVisualStyleBackColor = true;
+            // 
+            // Kembaliann
+            // 
+            this.Kembaliann.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Kembaliann.AutoSize = true;
+            this.Kembaliann.Depth = 0;
+            this.Kembaliann.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Kembaliann.Location = new System.Drawing.Point(256, 610);
+            this.Kembaliann.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Kembaliann.Name = "Kembaliann";
+            this.Kembaliann.Size = new System.Drawing.Size(10, 19);
+            this.Kembaliann.TabIndex = 46;
+            this.Kembaliann.Text = "0";
+            // 
+            // TotalHarga
+            // 
+            this.TotalHarga.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TotalHarga.AutoSize = true;
+            this.TotalHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TotalHarga.Location = new System.Drawing.Point(257, 499);
+            this.TotalHarga.Name = "TotalHarga";
+            this.TotalHarga.Size = new System.Drawing.Size(18, 20);
+            this.TotalHarga.TabIndex = 45;
+            this.TotalHarga.Text = "0";
+            // 
             // labelMaxQuantitas
             // 
             this.labelMaxQuantitas.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -372,7 +416,7 @@
             this.labelMaxQuantitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMaxQuantitas.Location = new System.Drawing.Point(840, 59);
             this.labelMaxQuantitas.Name = "labelMaxQuantitas";
-            this.labelMaxQuantitas.Size = new System.Drawing.Size(64, 20);
+            this.labelMaxQuantitas.Size = new System.Drawing.Size(57, 17);
             this.labelMaxQuantitas.TabIndex = 44;
             this.labelMaxQuantitas.Text = "Max: 50";
             // 
@@ -518,7 +562,7 @@
             this.labelTotalHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelTotalHarga.Location = new System.Drawing.Point(225, 499);
             this.labelTotalHarga.Name = "labelTotalHarga";
-            this.labelTotalHarga.Size = new System.Drawing.Size(41, 25);
+            this.labelTotalHarga.Size = new System.Drawing.Size(34, 20);
             this.labelTotalHarga.TabIndex = 37;
             this.labelTotalHarga.Text = "Rp.";
             // 
@@ -529,22 +573,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label9.Location = new System.Drawing.Point(69, 499);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 25);
+            this.label9.Size = new System.Drawing.Size(97, 20);
             this.label9.TabIndex = 36;
             this.label9.Text = "Total Harga";
-            // 
-            // kasirUsername
-            // 
-            this.kasirUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kasirUsername.AutoSize = true;
-            this.kasirUsername.Depth = 0;
-            this.kasirUsername.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.kasirUsername.Location = new System.Drawing.Point(644, 13);
-            this.kasirUsername.MouseState = MaterialSkin.MouseState.HOVER;
-            this.kasirUsername.Name = "kasirUsername";
-            this.kasirUsername.Size = new System.Drawing.Size(107, 19);
-            this.kasirUsername.TabIndex = 35;
-            this.kasirUsername.Text = "materialLabel1";
             // 
             // materialMaskedTextBoxTotal
             // 
@@ -634,30 +665,6 @@
             this.panel1.Size = new System.Drawing.Size(279, 647);
             this.panel1.TabIndex = 8;
             // 
-            // TotalHarga
-            // 
-            this.TotalHarga.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TotalHarga.AutoSize = true;
-            this.TotalHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TotalHarga.Location = new System.Drawing.Point(257, 499);
-            this.TotalHarga.Name = "TotalHarga";
-            this.TotalHarga.Size = new System.Drawing.Size(23, 25);
-            this.TotalHarga.TabIndex = 45;
-            this.TotalHarga.Text = "0";
-            // 
-            // Kembaliann
-            // 
-            this.Kembaliann.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Kembaliann.AutoSize = true;
-            this.Kembaliann.Depth = 0;
-            this.Kembaliann.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Kembaliann.Location = new System.Drawing.Point(256, 610);
-            this.Kembaliann.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Kembaliann.Name = "Kembaliann";
-            this.Kembaliann.Size = new System.Drawing.Size(10, 19);
-            this.Kembaliann.TabIndex = 46;
-            this.Kembaliann.Text = "0";
-            // 
             // TransaksiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -702,7 +709,6 @@
         private MaterialSkin.Controls.MaterialButton materialButtonLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialLabel kasirUsername;
         private MaterialSkin.Controls.MaterialButton materialButtonSimpan;
         private MaterialSkin.Controls.MaterialButton materialButtonPrint;
         private MaterialSkin.Controls.MaterialLabel labelKembalian;
@@ -714,5 +720,6 @@
         private System.Windows.Forms.Label labelMaxQuantitas;
         private System.Windows.Forms.Label TotalHarga;
         private MaterialSkin.Controls.MaterialLabel Kembaliann;
+        private MaterialSkin.Controls.MaterialButton kasirUsername;
     }
 }
